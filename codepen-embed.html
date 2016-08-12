@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`codepen-embed`
+A Polymer element to allow embedding of Codepen pens
+
+@demo demo/index.html 
+-->
+
+<dom-module id="codepen-embed">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'codepen-embed',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'codepen-embed',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
