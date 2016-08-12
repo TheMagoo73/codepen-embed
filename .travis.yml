@@ -1,7 +1,10 @@
 language: node_js
 sudo: required
 before script:
-- npm install -g bower polylint web-component-tester
+- npm install bower
+- npm install polylint
+- npm install web-component-tester
+- export PATH=$PWD/node_modules/.bin:$PATH
 - bower install
 - polylint
 node_js: stable
