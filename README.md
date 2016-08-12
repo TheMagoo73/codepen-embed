@@ -1,38 +1,11 @@
-# \<codepen-embed\>
+## &lt;codepen-embed&gt;
 
-A Polymer element to allow embedding of Codepen pens
+`codepen-embed` allows simple embedding of pens created in [Codepen](www.codepen.io "Codepen"). This element allows the height, theme and initial state of the pen to be set when it is initially rendered. Note- after initial rendering the pen cannot be manipulated using the elements properties due to the nature of the Codepen scripting that is invoked.
 
-## Install the Polymer-CLI
+Example:
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
+``` html
+<codepen-embed penId="ab123r"></codepen-embed>
 
-## Viewing Your Application
-
+<coedpen-embed penId="ab123r" height="450"></codepen-embed>
 ```
-$ polymer serve
-```
-
-## Building Your Application
-
-```
-$ polymer build
-```
-
-This will create a `build/` folder with `bundled/` and `unbundled/` sub-folders
-containing a bundled (Vulcanized) and unbundled builds, both run through HTML,
-CSS, and JS optimizers.
-
-You can serve the built versions by giving `polymer serve` a folder to serve
-from:
-
-```
-$ polymer serve build/bundled
-```
-
-## Running Tests
-
-```
-$ polymer test
-```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
