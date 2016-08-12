@@ -1,34 +1,70 @@
-<link rel="import" href="../polymer/polymer.html">
+<!--
+@license
+Copyright (c) 2016 John 'Mr Magoo' Clarke. All rights reserved.
+This code may only be used under the MIT license found at https://raw.githubusercontent.com/TheMagoo73/codepen-embed/master/license.md
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
 
 <!--
-`codepen-embed`
-A Polymer element to allow embedding of Codepen pens
+## &lt;codepen-embed&gt;
 
-@demo demo/index.html 
+`codepen-embed` allows simple embedding of pens created in [Codepen](www.codepen.io "Codepen"). This element allows the height, theme and initial state of the pen to be set when it is initially rendered. Note- after initial rendering the pen cannot be manipulated using the elements properties due to the nature of the Codepen scripting that is invoked.
+
+Example:
+
+``` html
+<codepen-embed penId="ab123r"></codepen-embed>
+
+<coedpen-embed penId="ab123r" height="450"></codepen-embed>
+```
 -->
 
 <dom-module id="codepen-embed">
+
   <template>
-    <style>
+    <style type="text/css">
       :host {
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]</h2>
+
+    <iframe id="cp_embed_{{penId}}" src="//codepen.io/anon/embed/{{penId}}?height={{height}}&amp;theme-id={{themeId}}&amp;default-tab={{defaultTab}}&amp;embed-version=2" scrolling="no" frameborder="no" height="{{height}}" allowtransparency="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
+
   </template>
 
-  <script>
+  <script type="text/javascript">
     Polymer({
 
       is: 'codepen-embed',
 
       properties: {
-        prop1: {
-          type: String,
-          value: 'codepen-embed',
-        },
-      },
 
+        // Tabs opened when the pen is initially rendered, a comma seperated list containing one of the following values: `html`, `css`; and optionally `results`
+        defaultTab: {
+          type: String,
+          value: "result"
+        },
+
+        // The theme used to render the pen. Default options are `light` and `dark`, however if you have custom themes defined in Codepen the index of one of these may be used
+        themeId: {
+          type: String,
+          value: "light"
+        },
+
+        // The id of the pen to be rendered
+        penId: {
+          type: String,
+          value: ""
+        },
+
+        // The height of the rendered pen in pixels
+        height: {
+          type: Number,
+          value: 300
+        }
+      }
     });
   </script>
+
 </dom-module>
